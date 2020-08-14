@@ -1,0 +1,14 @@
+parameters:
+    nouvelletechno.sitemap.cache.shared_max_age: 86400
+    nouvelletechno.sitemap.config: []
+
+services:
+    _defaults:
+        autowire: true
+        public: true
+
+    NouvelleTechno\SitemapBundle\Controller\SitemapController:
+        class: NouvelleTechno\SitemapBundle\Controller\SitemapController
+        autowire: true # or define your controller constructor and configure its arguments explicitly
+        tags:
+            - name: controller.service_arguments

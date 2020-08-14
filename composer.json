@@ -1,0 +1,29 @@
+{
+    "name": "nouvelletechno/sitemap-bundle",
+    "description": "This bundle helps you generating a sitemap.xml file for your Symfony application",
+    "type": "symfony-bundle",
+    "require": {
+        "php": "^7.1.3",
+        "symfony/framework-bundle": "^4.4 || ^5.1",
+        "symfony/twig-bundle": "^4.4 || ^5.1",
+        "symfony/twig-bridge": "^4.4 || ^5.1",
+        "symfony/yaml": "^4.4 || ^5.1"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Nouvelle-Techno.fr",
+            "email": "contact@nouvelle-techno.fr"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "NouvelleTechno\\SitemapBundle\\": ""
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "NouvelleTechno\\SitemapBundle\\Tests\\": "tests/"
+        }
+    }
+}

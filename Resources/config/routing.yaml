@@ -1,0 +1,3 @@
+nouvelletechno_sitemap_index:
+    path: /sitemap.xml
+    defaults: { _controller: NouvelleTechno\SitemapBundle\Controller\SitemapController::indexAction }
