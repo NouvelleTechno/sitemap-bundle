@@ -4,9 +4,14 @@
     "type": "symfony-bundle",
     "require": {
         "php": "^7.2.5",
+        "doctrine/orm": "^2.7",
+        "symfony/dependency-injection": "^4.3 || ^5.0",
+        "symfony/http-kernel": "^4.3 || ^5.0",
+        "symfony/http-foundation": "^4.3 || ^5.0",
         "symfony/framework-bundle": "^4.3 || ^5.0",
+        "symfony/routing": "^4.3 || ^5.0",
         "symfony/twig-bundle": "^4.3 || ^5.0",
-        "symfony/twig-bridge": "^4.3 || ^5.0",
+       "symfony/twig-bridge": "^4.3 || ^5.0",
         "symfony/yaml": "^4.3 || ^5.0"
     },
     "license": "MIT",
