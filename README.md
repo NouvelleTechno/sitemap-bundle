@@ -1,9 +1,7 @@
-# WARNING: Currently under development
-
-# Nouvelle-Techno.fr Sitemap Bundle
+# WARNING: Currently under development - Nouvelle-Techno.fr Sitemap Bundle
 Bundle that generates dynamic sitemap.xml content with simple yaml configuration.
 
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/NouvelleTechno/sitemap-bundle/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/NouvelleTechno/sitemap-bundle/?branch=master)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/aca709cea5de408fb1ed4a7dce569cd6)](https://www.codacy.com/manual/NouvelleTechno/sitemap-bundle?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=NouvelleTechno/sitemap-bundle&amp;utm_campaign=Badge_Grade)
 
 ## Installation
 
