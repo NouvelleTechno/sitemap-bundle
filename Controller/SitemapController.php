@@ -41,7 +41,7 @@ class SitemapController extends AbstractController
             }
             if(isset($parameter['parameters'])){
                 $method = 'get'.ucfirst($parameter['parameters']);
-                foreach ($this->em->getRepository('App:'.$parameter['entity'])->findAll() as $data) {
+                foreach ($this->entm->getRepository('App:'.$parameter['entity'])->findAll() as $data) {
                     $urls[] = [
                         'loc' => $this->router->generate($parameter['route'], [
                             $parameter['parameters'] => $data->$method(),
