@@ -5,11 +5,13 @@ Bundle that generates dynamic sitemap.xml content with simple yaml configuration
 
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/NouvelleTechno/sitemap-bundle/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/NouvelleTechno/sitemap-bundle/?branch=master)
 
-### Installation
+## Installation
 
 `# composer require NouvelleTechno/sitemap-bundle`
 
-#### Update your routing
+### Update your routing
+
+Add a `sitemap.yaml` file inside `config/routes` and include the below content to enable new route
 
 ```yaml
 sitemap:
@@ -18,9 +20,11 @@ sitemap:
 ```
 The bundle will then listen to `/sitemap.xml` and generate the sitemap by itself
 
-### Usage
+## Usage
 
 The bundle generates a sitemap based on YAML configuration.
+
+Add a `sitemap.yaml` file inside `config/packages` and customize the below example to enable your sitemap
 
 ```yaml
 sitemap:
