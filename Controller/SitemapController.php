@@ -15,14 +15,14 @@ class SitemapController extends AbstractController
     /**
      * @var EntityManagerInterface
      */
-    private $em;
+    private $entm;
     private $twig;
     protected $container;
     protected $router;
 
-    public function __construct(EntityManagerInterface $em, Environment $twig, ContainerInterface $container, UrlGeneratorInterface $router)
+    public function __construct(EntityManagerInterface $entm, Environment $twig, ContainerInterface $container, UrlGeneratorInterface $router)
     {
-        $this->em = $em;
+        $this->em = $entm;
         $this->twig = $twig;
         $this->container = $container;
         $this->router = $router;
@@ -38,16 +38,15 @@ class SitemapController extends AbstractController
         foreach($parameters['routes'] as $parameter){
             if(!isset($parameter['entity'])){
                 $urls[] = ['loc' => $this->router->generate($parameter['route'], [], UrlGeneratorInterface::ABSOLUTE_URL)];
-            }else{
-                if(isset($parameter['parameters'])){
-                    $method = 'get'.ucfirst($parameter['parameters']);
-                    foreach ($this->em->getRepository('App:'.$parameter['entity'])->findAll() as $data) {
-                        $urls[] = [
-                            'loc' => $this->router->generate($parameter['route'], [
-                                $parameter['parameters'] => $data->$method(),
-                            ], UrlGeneratorInterface::ABSOLUTE_URL)
-                        ];
-                    }
+            }
+            if(isset($parameter['parameters'])){
+                $method = 'get'.ucfirst($parameter['parameters']);
+                foreach ($this->em->getRepository('App:'.$parameter['entity'])->findAll() as $data) {
+                    $urls[] = [
+                        'loc' => $this->router->generate($parameter['route'], [
+                            $parameter['parameters'] => $data->$method(),
+                        ], UrlGeneratorInterface::ABSOLUTE_URL)
+                    ];
                 }
             }
         }
