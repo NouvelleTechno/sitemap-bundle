@@ -2,6 +2,7 @@
 Bundle that generates dynamic sitemap.xml content with simple yaml configuration.
 
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/aca709cea5de408fb1ed4a7dce569cd6)](https://www.codacy.com/manual/NouvelleTechno/sitemap-bundle?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=NouvelleTechno/sitemap-bundle&amp;utm_campaign=Badge_Grade)
+[![CodeFactor](https://www.codefactor.io/repository/github/nouvelletechno/sitemap-bundle/badge)](https://www.codefactor.io/repository/github/nouvelletechno/sitemap-bundle)
 
 ## Installation
 
