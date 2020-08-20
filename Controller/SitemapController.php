@@ -22,7 +22,7 @@ class SitemapController extends AbstractController
 
     public function __construct(EntityManagerInterface $entm, Environment $twig, ContainerInterface $container, UrlGeneratorInterface $router)
     {
-        $this->em = $entm;
+        $this->entm = $entm;
         $this->twig = $twig;
         $this->container = $container;
         $this->router = $router;
