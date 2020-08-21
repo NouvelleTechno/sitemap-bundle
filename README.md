@@ -35,6 +35,8 @@ sitemap:
         # Route that requires parameters
         - { route: 'demos_show', entity: 'Demos', parameters: 'id' }
 
-        # Coming soon...
-        # Adding frequency and priority
+        # Route with priority and frequency
+        # Priority between 0 and 1
+        # Frequency should be 'always', 'hourly', 'daily', 'weekly', 'monthly', 'yearly' or 'never'
+        - { route: 'demos_show', entity: 'Demos', parameters: 'id', frequency: 'monthly', priority: 0.5 }
 ```

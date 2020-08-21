@@ -40,7 +40,7 @@ class SitemapController extends AbstractController
             if(!isset($parameter['entity'])){
                 $urls[] = [
                     'loc' => $this->router->generate($parameter['route'], [], UrlGeneratorInterface::ABSOLUTE_URL),
-                    'priority' => ($parameter['priority'] < 1 && $parameter['priority'] > 0) ? $parameter['priority'] : '',
+                    'priority' => (isset($parameter['priority']) && $parameter['priority'] < 1 && $parameter['priority'] > 0) ? $parameter['priority'] : '',
                     'frequency' => (isset($parameter['frequency']) && in_array($parameter['frequency'], $freq)) ? $parameter['frequency'] : ''
                 ];
             }
@@ -51,9 +51,9 @@ class SitemapController extends AbstractController
                         'loc' => $this->router->generate($parameter['route'], [
                             $parameter['parameters'] => $data->$method(),
                         ], UrlGeneratorInterface::ABSOLUTE_URL),
-                        'priority' => ($parameter['priority'] < 1 && $parameter['priority'] > 0) ? $parameter['priority'] : '',
+                        'priority' => (isset($parameter['priority']) && $parameter['priority'] < 1 && $parameter['priority'] > 0) ? $parameter['priority'] : '',
                         'frequency' => (isset($parameter['frequency']) && in_array($parameter['frequency'], $freq)) ? $parameter['frequency'] : ''
-                    ];
+                        ];
                 }
             }
         }

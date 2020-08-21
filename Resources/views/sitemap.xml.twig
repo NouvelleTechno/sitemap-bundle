@@ -16,7 +16,7 @@
 
             {# Si il y a une fréquence de modification #}
             {% if url.frequency is defined and url.frequency != '' %}
-                <changefreq>{{url.changefreq}}</changefreq>
+                <changefreq>{{url.frequency}}</changefreq>
             {% endif %}
 
             {# Si il y a une priorité #}
