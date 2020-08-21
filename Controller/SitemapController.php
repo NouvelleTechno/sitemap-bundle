@@ -35,9 +35,14 @@ class SitemapController extends AbstractController
     {
         $parameters = $this->container->getParameter('nouvelletechno.sitemap.config');
         $urls = [];
+        $freq = ['always', 'hourly', 'daily', 'weekly', 'monthly', 'yearly', 'never'];
         foreach($parameters['routes'] as $parameter){
             if(!isset($parameter['entity'])){
-                $urls[] = ['loc' => $this->router->generate($parameter['route'], [], UrlGeneratorInterface::ABSOLUTE_URL)];
+                $urls[] = [
+                    'loc' => $this->router->generate($parameter['route'], [], UrlGeneratorInterface::ABSOLUTE_URL),
+                    'priority' => ($parameter['priority'] < 1 && $parameter['priority'] > 0) ? $parameter['priority'] : '',
+                    'frequency' => (isset($parameter['frequency']) && in_array($parameter['frequency'], $freq)) ? $parameter['frequency'] : ''
+                ];
             }
             if(isset($parameter['parameters'])){
                 $method = 'get'.ucfirst($parameter['parameters']);
@@ -45,7 +50,9 @@ class SitemapController extends AbstractController
                     $urls[] = [
                         'loc' => $this->router->generate($parameter['route'], [
                             $parameter['parameters'] => $data->$method(),
-                        ], UrlGeneratorInterface::ABSOLUTE_URL)
+                        ], UrlGeneratorInterface::ABSOLUTE_URL),
+                        'priority' => ($parameter['priority'] < 1 && $parameter['priority'] > 0) ? $parameter['priority'] : '',
+                        'frequency' => (isset($parameter['frequency']) && in_array($parameter['frequency'], $freq)) ? $parameter['frequency'] : ''
                     ];
                 }
             }
